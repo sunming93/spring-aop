@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -36,8 +37,8 @@ public class AOPTest {
     }
 
     @Test
-    void should_execute_afterThrowing_advice_after_the_method() {
-        execution.afterThrowingMethod();
+    void should_execute_afterThrowing_advice_after_the_method() throws Exception {
+        assertThrows(Exception.class,() -> execution.afterThrowingMethod());
 
         assertEquals(2, loggerContainer.getAfterThrowingMessages().size());
         assertEquals("AfterThrowing Method", loggerContainer.getAfterThrowingMessages().get(0));
