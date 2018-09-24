@@ -21,8 +21,8 @@ public class AOPTest {
     void should_execute_before_advice_before_the_method() {
         execution.berofeMethod();
 
-        assertEquals(2, loggerContainer.getBoforeMessages().size);
-        assertEquals("Before Advice", loggerContainer.getBoforeMessages().get(0));
-        assertEquals("Before Method", loggerContainer.getBoforeMessages().get(1));
+        assertEquals(2, loggerContainer.getBerofeMessages().size());
+        assertEquals("Before Advice", loggerContainer.getBerofeMessages().get(0));
+        assertEquals("Before Method", loggerContainer.getBerofeMessages().get(1));
     }
 }
