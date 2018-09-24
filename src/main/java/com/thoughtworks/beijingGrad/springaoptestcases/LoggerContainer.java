@@ -11,6 +11,7 @@ public class LoggerContainer {
     private List<String> berofeMessages = new ArrayList<>();
     private List<String> afterReturningMessages = new ArrayList<>();
     private List<String> afterThrowingMessages = new ArrayList<>();
+    private List<String> afterMessages = new ArrayList<>();
 
     public List<String> getBerofeMessages() {
         return berofeMessages;
@@ -22,5 +23,9 @@ public class LoggerContainer {
 
     public List<String> getAfterThrowingMessages() {
         return afterThrowingMessages;
+    }
+
+    public List<String> getAfterMessages() {
+        return afterMessages;
     }
 }

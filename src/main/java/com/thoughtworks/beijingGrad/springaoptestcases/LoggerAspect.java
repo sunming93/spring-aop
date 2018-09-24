@@ -2,10 +2,7 @@ package com.thoughtworks.beijingGrad.springaoptestcases;
 
 import com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterReturningService;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -30,5 +27,10 @@ public class LoggerAspect {
     @AfterThrowing("@annotation(com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterThrowingService)")
     public void afterThrowingLog(JoinPoint joinPoint ){
         loggerContainer.getAfterThrowingMessages().add("AfterThrowing Advice");
+    }
+
+    @After("@annotation(com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterService)")
+    public void afterLog(JoinPoint joinPoint ){
+        loggerContainer.getAfterMessages().add("After Advice");
     }
 }

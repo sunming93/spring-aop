@@ -44,4 +44,14 @@ public class AOPTest {
         assertEquals("AfterThrowing Method", loggerContainer.getAfterThrowingMessages().get(0));
         assertEquals("AfterThrowing Advice", loggerContainer.getAfterThrowingMessages().get(1));
     }
+
+    @Test
+    void should_execute_after_advice_after_the_method() throws Exception {
+        assertThrows(Exception.class,() -> execution.afterMethod());
+
+        assertEquals(2, loggerContainer.getAfterMessages().size());
+        assertEquals("After Method", loggerContainer.getAfterMessages().get(0));
+        assertEquals("After Advice", loggerContainer.getAfterMessages().get(1));
+    }
+
 }
