@@ -12,6 +12,7 @@ public class LoggerContainer {
     private List<String> afterReturningMessages = new ArrayList<>();
     private List<String> afterThrowingMessages = new ArrayList<>();
     private List<String> afterMessages = new ArrayList<>();
+    private List<String> aroundMessages = new ArrayList<>();
 
     public List<String> getBerofeMessages() {
         return berofeMessages;
@@ -27,5 +28,9 @@ public class LoggerContainer {
 
     public List<String> getAfterMessages() {
         return afterMessages;
+    }
+
+    public List<String> getAroundMessages() {
+        return aroundMessages;
     }
 }

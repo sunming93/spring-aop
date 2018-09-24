@@ -1,9 +1,6 @@
 package com.thoughtworks.beijingGrad.springaoptestcases;
 
-import com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterReturningService;
-import com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterService;
-import com.thoughtworks.beijingGrad.springaoptestcases.annotations.AfterThrowingService;
-import com.thoughtworks.beijingGrad.springaoptestcases.annotations.BeforeService;
+import com.thoughtworks.beijingGrad.springaoptestcases.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,5 +29,10 @@ public class Execution {
     public void afterMethod() throws Exception{
         loggerContainer.getAfterMessages().add("After Method");
         throw new Exception();
+    }
+
+    @AroundService
+    public void aroundMethod() {
+        loggerContainer.getAroundMessages().add("Around Method");
     }
 }

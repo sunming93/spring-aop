@@ -54,4 +54,13 @@ public class AOPTest {
         assertEquals("After Advice", loggerContainer.getAfterMessages().get(1));
     }
 
+    @Test
+    void should_execute_around_advice_around_the_method(){
+        execution.aroundMethod();
+
+        assertEquals(3, loggerContainer.getAroundMessages().size());
+        assertEquals("Around Before Advice", loggerContainer.getAroundMessages().get(0));
+        assertEquals("Around Method", loggerContainer.getAroundMessages().get(1));
+        assertEquals("Around After Advice", loggerContainer.getAroundMessages().get(2));
+    }
 }
