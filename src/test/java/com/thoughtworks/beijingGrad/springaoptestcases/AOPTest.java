@@ -25,4 +25,13 @@ public class AOPTest {
         assertEquals("Before Advice", loggerContainer.getBerofeMessages().get(0));
         assertEquals("Before Method", loggerContainer.getBerofeMessages().get(1));
     }
+
+    @Test
+    void should_execute_afterReturning_advice_after_the_method() {
+        execution.afterReturningMethod();
+
+        assertEquals(2, loggerContainer.getAfterReturningMessages().size());
+        assertEquals("AfterReturning Method", loggerContainer.getAfterReturningMessages().get(0));
+        assertEquals("AfterReturning Advice", loggerContainer.getAfterReturningMessages().get(1));
+    }
 }

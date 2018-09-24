@@ -14,7 +14,7 @@ public class LoggerAspect {
     @Autowired
     private LoggerContainer loggerContainer;
 
-    @Before("@annotation(com.thoughtworks.beijingGrad.springaoptestcases.BeforeService)")
+    @Before("@annotation(com.thoughtworks.beijingGrad.springaoptestcases.annotations.BeforeService)")
     public void log(JoinPoint joinPoint ){
         loggerContainer.getBerofeMessages().add("Before Advice");
     }

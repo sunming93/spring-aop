@@ -1,4 +1,4 @@
-package com.thoughtworks.beijingGrad.springaoptestcases;
+package com.thoughtworks.beijingGrad.springaoptestcases.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
